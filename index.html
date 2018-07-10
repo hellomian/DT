@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta charset="utf-8">
+<meta name="viewport"  content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0, user-scalable=0;" />
+<meta name="format-detection" content="telephone=no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+<title>洞庭土菜馆简介</title>
+<link rel="stylesheet" href="../css/index.css">
+</head>
+<body>
+<div id="loadingContainer" style="width:100%; background:#032274;height: 100%; position: relative;">
+<div id="loading1" style=""></div>
+<div id="loading2" style=""></div>
+</div>
+
+
+
+	
+
+
+
+
+<div class="wrap" id="scene">
+<h1>洞庭土菜馆简介</h1>
+<div class="sec drag">
+<div class="bg">
+<div class="bg_sec bg01"></div>
+<div class="bg_sec bg02"></div>
+<div class="bg_sec bg03"></div>
+<div class="bg_sec bg04"></div>
+<div class="bg_sec bg05"></div>
+<div class="bg_sec bg06"></div>
+
+</div>
+
+<section id="start" class="sec01 pr">
+	<div class="ab_logo top-bottom"><img src="../images/logo_index.jpg" width="100%"></div>
+	<div class="ab_sc01con  left-right">
+		【洞庭土菜馆】隶属于广东凯港酒店股份有限公司。【凯港股份】成立于2001年，是一家集餐饮、酒店、物业管理，疗养院等多种产业为一体、多元化发展的酒店集团化企业。
+	</div>
+	<div class="ab_sc01bg bottom-top"></div>
+
+	<span class="start"><b class="gard"></b></span>
+</section>
+
+<section class="sec02 pr">
+	<div class="ab_logo_lever top-bottom"><img src="../images/logo_lever.png" width="100%"></div>
+	<div class="ab_sc02bg01 in-out"><img src="../images/P1_02.jpg" width="100%"></div>
+	<div class="ab_sc02con  bottom-top">
+		【目前公司现拥有20家【洞庭土菜馆】、3家【凯港精品酒店】、1家【广园中综合市场】、1家【凯港养老院】及2015年即将斥资亿元打造的体验式轻连锁餐厅【浏阳蒸菜】。
+	</div>	
+	<span class="start"><b class="gard"></b></span>
+</section>
+
+<section class="sec03 pr">
+	<div class="ab_logo_lever top-bottom"><img src="../images/logo_lever.png" width="100%"></div>
+	<div class="ab_sc03bg01 in-out"><div>【洞庭土菜馆】自2001年1月16日在广州环市中路创设第一家门店以来，公司始终秉承着打造“生态湘菜”第一品牌的经营目标和“忠诚、敬业、执着、进取”的企业精神，通过持续不断的努力拼搏，成为广州湘菜行业的品质典范，并得到了广泛的认同和赞誉。
+2002年经过国家工商总局商标局批准，“洞庭土”正式成为公司注册商标，于2004年被评定为广州市著名商标，2007年被评为广东省著名商标，并在2010年，2014年被延续认定。</div></div>
+	<div class="ab_sc03bg02 bottom-top"></div>
+	<span class="start"><b class="gard"></b></span>
+</section>
+
+<section class="sec04">
+	<div class="ab_logo_lever top-bottom"><img src="../images/logo_lever.png" width="100%"></div>
+	<div class="ab_sc04con  bottom-top">
+		时至今日，“洞庭土菜馆”已然是广东省最受消费者欢迎的餐饮品牌之一。截止到2014年6月，我们的店面覆盖广州诠释及周边城市，拥有20家分店。<br>
+我们立志用唇齿间的美味碰撞将源远流长的湖湘文化呈现给顾客。
+	</div>	
+	<div class="ab_sc04bg bottom-top"><img src="../images/P1_06.png"></div>
+
+	<span class="start"><b class="gard"></b></span>
+</section>
+
+<section class="sec05">
+	<div class="ab_logo_lever top-bottom"><img src="../images/logo_lever.png" width="100%"></div>
+	<div class="ab_sc05bg bottom-top"></div>
+	<span class="start"><b class="gard"></b></span>	
+</section>
+
+<section class="sec06">
+	<div class="ab_logo_lever top-bottom"><img src="../images/logo_lever.png" width="100%"></div>
+	<div class="ab_sc03bg01 in-out"><div><img src="../images/P1_08.jpg" width="95%"></div></div>
+	<div class="ab_sc06con bottom-top">广州赤岗店（旗舰店）<br>地址：广州市海珠区新港中路468号大院<br>电话：020-66351288</div>
+</section>
+
+
+</div>
+</div>
+
+<script src="../js/zepto.min.js"></script>
+<script>
+	var start = {
+		x : 0,
+		y : 0
+	};
+	document.body.addEventListener('touchstart', function(e) {
+		e = e.changedTouches[0];
+		onStart(e);
+		start.x = e.pageX;
+		start.y = e.pageY;
+	});
+
+	document.body.addEventListener('touchmove', function(e) {
+		if (e.target.id === 'ctrlV') {
+			return false;
+		} else {
+			onMove(e.changedTouches[0], e);
+		}
+
+	});
+
+	document.body.addEventListener('touchend', function(e) {
+		if (e.target.id === 'ctrlV' && e.changedTouches[0].pageX == start.x && e.changedTouches[0].pageY == start.y) {
+
+
+		} else {
+			onEnd(e.changedTouches[0]);
+		}
+
+	});
+	
+
+	// 以下是拖动效果
+	var startX = 0, startY = 0;
+	margin = 0;
+	var pages = null;
+	var curPage = 0;
+	var pageWidth = 0, pageHeight = 0;
+	var lineHeight = 0, secHeight = 0;
+	var targetElement = null;
+	var scrollPrevent = false, movePrevent = false, touchDown = false;
+
+	$(document).ready(function() {
+		var n = 0;
+		var loading = setInterval(function() {
+			n++;
+			if (n < 100) {
+				document.getElementById('loading2').style.cssText = 'top:' + (218 * n / 100 + 137) + 'px; height:' + 218 * (1 - (n / 100)) + 'px';
+			} else {
+				clearInterval(loading);
+				document.getElementById('loadingContainer').style.display = 'none';
+				document.getElementById('scene').style.display = 'block';
+				initPage();
+				// document.getElementById('audio').style.display='inline-block';
+
+				//                var video = new tvp.VideoInfo();
+				//                video.setVid("1");
+				//                video.setTitle("#");
+				//                var player = new tvp.Player();
+				//                player.create({
+				//                    width:274,
+				//                    height:192,
+				//                    video:video,
+				//                    modId:"video"
+				//                });
+			}
+
+		}, 10);
+
+	});
+
+	function onStart(e) {
+		if (movePrevent == true) {
+			event.preventDefault();
+			return false;
+		}
+
+		touchDown = true;
+
+		// 起始点，页面位置
+		startX = e.pageX;
+		startY = e.pageY;
+
+		$(".sec").addClass("drag");
+
+		margin = $(".sec").css("-webkit-transform");
+		margin = margin.replace("matrix(", "");
+		margin = margin.replace(")", "");
+		margin = margin.split(",");
+		margin = parseInt(margin[5]);
+	}
+
+	function onMove(e, oe) {
+		if (movePrevent == true || touchDown != true) {
+			event.preventDefault();
+			return false;
+		}
+		event.preventDefault();
+		if (scrollPrevent == false && e.pageY != startY) {
+			var temp = margin + e.pageY - startY;
+			$(".sec").css("-webkit-transform", "matrix(1, 0, 0, 1, 0, " + temp + ")");
+		}
+	}
+
+	function onEnd(e) {
+		if (movePrevent == true) {
+			event.preventDefault();
+			return false;
+		}
+
+		touchDown = false;
+
+		if (scrollPrevent == false) {
+			// 抬起点，页面位置
+			endX = e.pageX;
+			endY = e.pageY;
+			if (Math.abs(endY - startY) <= 50) {
+				animatePage(curPage);
+			} else {
+				if (endY > startY) {
+					prevPage();
+				} else {
+					nextPage();
+				}
+			}
+		}
+
+		$(".sec").removeClass("drag");
+	}
+
+	function prevPage() {
+		var newPage = curPage - 1;
+		animatePage(newPage);
+
+	}
+
+	function nextPage() {
+		var newPage = curPage + 1;
+		animatePage(newPage);
+	}
+
+	function animatePage(newPage) {
+		if (newPage < 0) {
+			newPage = 0;
+		}
+		if (newPage > $(".wrap section").length - 1) {
+			newPage = $(".wrap section").length - 1;
+		}
+
+		curPage = newPage;
+		var newMarginTop = newPage * (-pageHeight);
+		$(".sec").css({
+			"-webkit-transform" : "matrix(1, 0, 0, 1, 0, " + newMarginTop + ")"
+		});
+
+		movePrevent = true;
+		setTimeout("movePrevent=false;", 300);
+
+		// 每页动画
+		if (!$(pages[curPage]).hasClass("page-show")) {
+			$(pages[curPage]).addClass("page-show");
+		}
+		$(pages[curPage - 1]).removeClass("page-show");
+		$(pages[curPage + 1]).removeClass("page-show");
+
+	};
+	
+// 翻转的绑定
+	window.orientation = function () {
+		initPage();
+	};
+
+	function initPage() {
+		pageWidth = $(window).width() - 0;
+		pageHeight = $(".wrap").height() - 0;
+		pages = $(".wrap section");
+		$(".bg .bg_sec").css("height", pageHeight);
+		var bg_sec_height = $('.bg .bg_sec').height();
+
+		$(".wrap section").css({
+			"width" : pageWidth + "px",
+			"height" : pageHeight + "px"
+		});
+
+		secHeight = pageHeight * $(".wrap section").length;
+		lineHeight = 832 * secHeight / pageHeight;
+
+		$(".sec").addClass("drag");
+		animatePage(curPage);
+
+	};
+
+			
+</script>
+
+</body>
+</html>
